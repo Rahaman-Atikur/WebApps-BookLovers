@@ -3,13 +3,13 @@ import React from 'react';
 import bookImage from '../../assets/books.jpg'
 const Banner = () => {
     return (
-        <div>
+        <div className='flex justify-around items-center'>
             <div>
                 <h1>Its My Lovely Banner</h1>
-                <button className='btn'>Test</button>
+                <button className='btn-primary'>Test</button>
             </div>
             <div>
-                <img src={bookImage} alt="" />
+                <img className='w-3/12' src={bookImage} alt="" />
             </div>
         </div>
     );
