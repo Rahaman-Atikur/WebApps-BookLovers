@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Book = ({ singleBook }) => {
     console.log(singleBook);
     // console.log(singleBook.images);
-    const { bookName, author, image, category, rating, tags, publisher,bookId } = singleBook;
+    const { bookName, author, image, category, rating, tags, publisher, bookId } = singleBook;
     return (
         <Link to={`/bookDetails/${bookId}`}><div className="  card bg-base-100 w-96 shadow-sm shadow">
             <figure className='bg-gray-100'>
