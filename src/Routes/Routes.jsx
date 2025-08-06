@@ -10,11 +10,14 @@ import Roots from '../Pages/Roots/Roots';
 export const router = createBrowserRouter([
     {
         path: "/",
-        Component:Roots ,
+        Component: Roots,
         errorElement: <Error></Error>,
         children: [
             {
                 index: true,
+                // loader: () => fetch('books.json'),
+                // loader: () => fetch('books.json'),
+                loader: () => fetch('books.json'),
                 path: "/",
                 Component: Home
             }
