@@ -22,10 +22,13 @@ const ReadList = () => {
     const handleSort = (type) => {
         setSort(type);
         if(type==="pages"){
-            const sortedByPage = [...readList].sort((a,b)=>(a.totalPages - b.totalPages)
+            const sortedByPage = [...readList].sort((a,b)=>a.totalPages - b.totalPages)
             setReadList(sortedByPage);
+            console.log(sortedByPage);
         }
         if(type==="ratings"){
+            const sortedByRatings = [...readList].sort((a,b)=>a.totalPages -b.totalPages)
+            setReadList(sortedByRatings);
 
         }
     }
