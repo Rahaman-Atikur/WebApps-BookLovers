@@ -5,16 +5,25 @@ import { useLoaderData } from 'react-router';
 import { getStoredBook } from '../../Utilities/addToDB';
 
 const ReadList = () => {
-    const [readList,setReadList] = useState([])
+    const [readList, setReadList] = useState([])
+    // const data = useLoaderData();
     const data = useLoaderData();
     console.log(data);
+    // useEffect(() => {
+    //     const storedBookData = getStoredBook();
+    //     // console.log(storedBookData);
+    //     const convertedStoredBooks = storedBookData.map((id) => parseInt(id));
+    //     console.log(convertedStoredBooks);
+    //     const myReadList = data.filter((book)=>convertedStoredBooks.includes(book.bookId));
+    //     setReadList(myReadList);
+    // }, [])
     useEffect(() => {
-        const storedBookData = getStoredBook();
-        // console.log(storedBookData);
-        const convertedStoredBooks = storedBookData.map((id) => parseInt(id));
-        console.log(convertedStoredBooks);
-        const myReadList = data.filter((book)=>convertedStoredBooks.includes(book.bookId));
-        setReadList(myReadList);
+        const dataFromLocalStorage = getStoredBook();
+        const convertedDataFromLocalStorage = dataFromLocalStorage.map((id)=>parseInt(id));
+        
+        const readList = data.filter((book) => convertedDataFromLocalStorage.includes(book.bookId))
+        setReadList(readList);
+      
     }, [])
     return (
         <div>
