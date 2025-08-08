@@ -1,5 +1,6 @@
 const getStoredBook = () => {
   const storedBookSTR = localStorage.getItem("readItem");
+
   if (storedBookSTR) {
     const storedBookData = JSON.parse(storedBookSTR);
     return storedBookData;
@@ -17,5 +18,4 @@ const addToStoredDB = (id) => {
     localStorage.setItem("readItem", data);
   }
 };
-
-export { addToStoredDB };
+export { addToStoredDB, getStoredBook };
