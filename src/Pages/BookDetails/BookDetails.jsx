@@ -16,6 +16,7 @@ const BookDetails = () => {
     const handleMarkedAsRead =(id) => {
         addToStoredDB(id);
     }
+   
     return (
         <div className='mt-10 w-2/3 mx-auto'>
             <h1 className='text-xl font-extrabold '>{bookName}</h1>
